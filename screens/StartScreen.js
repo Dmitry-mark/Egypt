@@ -2,14 +2,14 @@ import React from 'react';
 import { StyleSheet, View, ImageBackground, Image, TouchableOpacity, Text } from 'react-native';
 import LottieView from 'lottie-react-native';
 
-export default function StartScreen({ navigation }) {
+function StartScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <ImageBackground
         source={require('../assets/egypt4.png')}
         style={styles.background}
       >
-        {/* Логотип сверху */}
+        {/* Logo at the top */}
         <View style={styles.logoContainer}>
           <Image
             source={require('../assets/Pyramidoria.png')}
@@ -18,7 +18,7 @@ export default function StartScreen({ navigation }) {
           />
         </View>
 
-        {/* Анимация по центру */}
+        {/* Lottie animation in the background */}
         <View style={styles.animationContainer}>
           <LottieView
             source={require('../assets/Animation.json')}
@@ -28,7 +28,7 @@ export default function StartScreen({ navigation }) {
           />
         </View>
 
-        {/* Контейнер с кнопками по центру */}
+        {/* Button container centered on the screen */}
         <View style={styles.buttonWrapper}>
           <TouchableOpacity
             style={styles.button}
@@ -87,22 +87,26 @@ const styles = StyleSheet.create({
   },
   buttonWrapper: {
     position: 'absolute',
-    top: '60%',
+    top: '50%',
     left: 0,
     right: 0,
     alignItems: 'center',
+    // Shift upward to center the container vertically
+    transform: [{ translateY: -60 }],
   },
   button: {
-    backgroundColor: 'rgba(0,0,0,0.5)', // полупрозрачный фон
+    backgroundColor: 'rgba(0,0,0,0.5)', // semi-transparent background
     paddingVertical: 15,
     paddingHorizontal: 30,
-    borderRadius: 10,
+    borderRadius: 20,
     marginVertical: 10,
-    width: 200,
+    width: 300,
     alignItems: 'center',
   },
   buttonText: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: 25,
   },
 });
+
+export default StartScreen;
