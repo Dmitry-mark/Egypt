@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, ImageBackground, Image, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import LottieView from 'lottie-react-native';
 
 function StartScreen({ navigation }) {
@@ -12,7 +12,7 @@ function StartScreen({ navigation }) {
         {/* Logo at the top */}
         <View style={styles.logoContainer}>
           <Image
-            source={require('../assets/Pyramidoria.png')}
+            source={require('../assets/Pyramidoria.gif')}
             style={styles.logo}
             resizeMode="contain"
           />
@@ -30,23 +30,40 @@ function StartScreen({ navigation }) {
 
         {/* Button container centered on the screen */}
         <View style={styles.buttonWrapper}>
+          {/* Mini Game button */}
           <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate('MiniGameScreen')}
           >
-            <Text style={styles.buttonText}>Mini Game</Text>
+            <Image
+              source={require('../assets/Mini-game.png')}
+              style={styles.buttonImage}
+              resizeMode="contain"
+            />
           </TouchableOpacity>
+
+          {/* Quiz button */}
           <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate('QuizStartScreen')}
           >
-            <Text style={styles.buttonText}>Quiz</Text>
+            <Image
+              source={require('../assets/quiz.png')}
+              style={styles.buttonImage}
+              resizeMode="contain"
+            />
           </TouchableOpacity>
+
+          {/* Attractions button */}
           <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate('AttractionsScreen')}
           >
-            <Text style={styles.buttonText}>Attractions</Text>
+            <Image
+              source={require('../assets/Attractions.png')}
+              style={styles.buttonImage}
+              resizeMode="contain"
+            />
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -64,7 +81,7 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     position: 'absolute',
-    top: 120,
+    top: 150,
     left: 0,
     right: 0,
     alignItems: 'center',
@@ -91,8 +108,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     alignItems: 'center',
-    // Shift upward to center the container vertically
-    transform: [{ translateY: -60 }],
+    transform: [{ translateY: -100 }],
   },
   button: {
     backgroundColor: 'rgba(0,0,0,0.5)', // semi-transparent background
@@ -103,9 +119,9 @@ const styles = StyleSheet.create({
     width: 300,
     alignItems: 'center',
   },
-  buttonText: {
-    color: '#fff',
-    fontSize: 25,
+  buttonImage: {
+    width: 200,
+    height: 40,
   },
 });
 
