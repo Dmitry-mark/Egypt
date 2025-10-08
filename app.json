@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "DESERT ORACLE",
-    "slug": "DESERT ORACLE",
+    "slug": "desert-oracle",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,13 +16,20 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.markovich.d.desertoracle",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "61f247c8-2095-47c9-a9b1-810d76208570"
+      }
     }
   }
 }
